@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 — CSS Table & Form</title>
+  <link rel="stylesheet" href="task4.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation bar linking across tasks -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="nav-brand">Assignment #1 / Task 4</span>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Task 1: Profile</a></li>
+        <li><a href="task2.html" class="nav-link">Task 2: Layout</a></li>
+        <li><a href="exercise1/index.html" class="nav-link">Task 3: Tribute</a></li>
+        <li><a href="task4.html" class="nav-link active">Task 4: Table & Form</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Main Container -->
+  <main class="page-container">
+
+    <!-- ==========================================
+         EXERCISE 1: TABLE STYLING
+         ========================================== -->
+    <section class="section-block">
+      <!-- Heading styled with ID selector as required -->
+      <h1 id="grades-table-heading">Student Academic Performance</h1>
+      <p class="section-description">
+        Grading record for SE-2529 students in DevOps & Cloud Infrastructure. 
+        Demonstrates cell merging (rowspan/colspan), alternate row striping, and custom highlight classes.
+      </p>
+
+      <div class="table-wrapper">
+        <table class="grades-table">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Course / Subject</th>
+              <th>Score</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Zhylgeldi Bolat with rowspan merging multiple subjects -->
+            <tr class="highlight-row">
+              <td rowspan="2" class="student-name-cell">Zhylgeldi Bolat (SE-2529)</td>
+              <td>DevOps & CI/CD Pipelines</td>
+              <td>98</td>
+              <td>A</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Enterprise Automated Testing (Vanessa)</td>
+              <td>95</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Alikhan Sadykov</td>
+              <td>Cloud Systems & Kubernetes</td>
+              <td>88</td>
+              <td>B+</td>
+            </tr>
+            <tr>
+              <td>Dastan Nurpeissov</td>
+              <td>Containerization with Docker</td>
+              <td>91</td>
+              <td>A-</td>
+            </tr>
+            <tr>
+              <td>Madina Temir</td>
+              <td>Scripting with OneScript</td>
+              <td>84</td>
+              <td>B</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <!-- Colspan attribute to merge summary cells -->
+            <tr class="summary-row">
+              <td colspan="3">Overall Cohort Average</td>
+              <td>91.2 (A-)</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EXERCISE 2: FORM STYLING
+         ========================================== -->
+    <section class="section-block">
+      <h2 id="feedback-form-heading">Course Feedback & Assessment</h2>
+      <p class="section-description">
+        Please submit your feedback regarding the curriculum and laboratory assignments.
+      </p>
+
+      <!-- Centered fixed-width form container -->
+      <div id="feedback-form-container" class="form-container">
+        <form action="#" method="post" class="feedback-form" onsubmit="event.preventDefault(); alert('Feedback submitted successfully!');">
+          
+          <!-- Text Input for Name -->
+          <div class="form-group">
+            <label for="full-name" class="form-label">Full Name</label>
+            <input type="text" id="full-name" name="name" class="form-input" placeholder="e.g. Zhylgeldi Bolat" required>
+          </div>
+
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="user-email" class="form-label">Email Address</label>
+            <input type="email" id="user-email" name="email" class="form-input" placeholder="name@domain.com" required>
+          </div>
+
+          <!-- Select Dropdown for Role -->
+          <div class="form-group">
+            <label for="user-role" class="form-label">Academic Role</label>
+            <select id="user-role" name="role" class="form-select" required>
+              <option value="" disabled selected>Select your role...</option>
+              <option value="student">Student</option>
+              <option value="teacher">Teacher / Instructor</option>
+              <option value="other">Industry Expert / Other</option>
+            </select>
+          </div>
+
+          <!-- Radio Buttons for Yes/No Question -->
+          <div class="form-group">
+            <span class="form-label">Would you recommend this course to peers?</span>
+            <div class="radio-options-wrapper">
+              <label class="radio-option">
+                <input type="radio" id="rec-yes" name="recommend" value="yes" required>
+                <span>Yes, definitely</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" id="rec-no" name="recommend" value="no">
+                <span>No, needs improvements</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Textarea for Comments -->
+          <div class="form-group">
+            <label for="user-comments" class="form-label">Comments & Suggestions</label>
+            <textarea id="user-comments" name="comments" class="form-textarea" rows="4" placeholder="Share your experience and thoughts about the tasks..." required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button type="submit" id="submit-button" class="submit-btn">Submit Feedback</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p>&copy; 2026 Zhylgeldi Bolat (SE-2529). Assignment #1 — Task 4: CSS Table and Form.</p>
+  </footer>
+
+</body>
+</html>
