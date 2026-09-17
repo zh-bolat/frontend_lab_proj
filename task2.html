@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 — Page Layout (Floats & Positioning)</title>
+  <link rel="stylesheet" href="task2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Wrapper Container using only divs -->
+  <div class="site-wrapper">
+
+    <!-- 1. Header Section -->
+    <div class="site-header">
+      <div class="header-title">DevOps Engineering & Financial Systems</div>
+      <div class="header-subtitle">Zhylgeldi Bolat — Group SE-2529</div>
+    </div>
+
+    <!-- 2. Navigation Bar (At least 4 links, float/inline-block, no flexbox/grid) -->
+    <div class="site-navbar">
+      <div class="nav-item"><a href="index.html">Task 1: Profile</a></div>
+      <div class="nav-item active"><a href="task2.html">Task 2: Layout</a></div>
+      <div class="nav-item"><a href="exercise1/index.html">Task 3: Tribute</a></div>
+      <div class="nav-item"><a href="task4.html">Task 4: Table & Form</a></div>
+    </div>
+
+    <!-- Middle Two-Column Area (Float-based layout) -->
+    <div class="main-columns-container">
+
+      <!-- 3. Sidebar Menu (Floated Left, list of at least 3 items) -->
+      <div class="sidebar-menu">
+        <div class="sidebar-heading">Navigation Menu</div>
+        <ul class="sidebar-list">
+          <li><a href="#ci-cd">CI/CD Pipeline</a></li>
+          <li><a href="#testing">Vanessa Testing</a></li>
+          <li><a href="#k8s">K8s Clusters</a></li>
+          <li><a href="#monitoring">Observability</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Main Content / Aside Section (Floated Right, heading + paragraph) -->
+      <div class="aside-content">
+        <h2 id="ci-cd" class="content-title">Infrastructure as Code & Automated Testing</h2>
+        <p class="content-paragraph">
+          In contemporary enterprise environments, financial systems demand strict determinism and zero-defect 
+          releases. By pairing Vanessa Automation and OneScript with Docker containers and Kubernetes clusters, 
+          we establish continuous integration pipelines that run extensive regression test suites prior to production rollouts.
+        </p>
+        <p class="content-paragraph">
+          This architecture eliminates human errors, guarantees reproducible execution across environments, and 
+          ensures complete compliance with regulatory auditing standards.
+        </p>
+      </div>
+
+      <!-- Clearfix divider to clear floats before footer -->
+      <div class="clear-floats"></div>
+    </div>
+
+    <!-- 5. Footer Section -->
+    <div class="site-footer">
+      <div>&copy; 2026 Zhylgeldi Bolat (SE-2529). Built with pure HTML divs, floats, and CSS positioning.</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
